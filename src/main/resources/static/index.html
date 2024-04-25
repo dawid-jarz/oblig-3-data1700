@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobilett</title>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+</head>
+    <body onload="getAll()">
+        <nav>
+            <h>Ticket order</h>
+        </nav>
+        <div id="form">
+            <label for="movie">Movie</label>
+            <select id="movie">
+                <option value="Titanic">Titanic</option>
+                <option value="Avengers: Endgame">Avengers: Endgame</option>
+                <option value="Interstellar">Interstellar</option>
+            </select>
+
+            <label for="name">Name</label>
+            <input id="name" type="text">
+
+            <label for="sname">Surname</label>
+            <input id="sname" type="text">
+
+            <label for="quantity">Number of tickets</label>
+            <input id="quantity" type="number">
+
+            <label for="email">Email</label>
+            <input id="email" type="email">
+
+            <label for="nmb">Phone number</label>
+            <input id="nmb" type="text">
+            
+        </div>
+        <div id="buttons">
+            <button onclick="ticketOrder()">Buy ticket</button>
+            <button onclick="deleteTickets()">Delete tickets</button>
+        </div>
+        <div id="ticketsList">
+            <h1>Ordered tickets:</h1>
+            <div id="orderedTickets">
+            </div>
+        </div>
+        <br>
+        <br>
+    </body>
+</html>

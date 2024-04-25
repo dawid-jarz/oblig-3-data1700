@@ -1,5 +1,4 @@
 function ticketOrder(){
-    // Collect input values
     const movie = $("#movie").val();
     const name = $("#name").val();
     const sname = $("#sname").val();
@@ -7,27 +6,23 @@ function ticketOrder(){
     const email = $("#email").val();
     const nmb = $("#nmb").val();
 
-    // Validation checks
     if (movie === "" || name === "" || sname === "" || quantity === "" || email === "" || nmb === "") {
         alert("Please fill in all fields.");
         return;
     }
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
         alert("Please enter a valid email address.");
         return;
     }
 
-    // Phone number validation
     const phoneNumberPattern = /^\d{8}$/;
     if (!phoneNumberPattern.test(nmb)) {
         alert("Phone number must contain exactly 8 digits.");
         return;
     }
 
-    // Construct ticket object
     const ticket = {
         movie: movie,
         name: name,
@@ -37,13 +32,10 @@ function ticketOrder(){
         nmb: nmb
     };
 
-    // Send ticket data to server
     $.post("/save", ticket, function(){
-        // After successful submission, retrieve all tickets
         getAll();
     });
 
-    // Clear input fields
     $("#movie").val("");
     $("#name").val("");
     $("#sname").val("");
